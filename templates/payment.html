@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Оплата
+{% endblock %}
+
+{% block body %}
+<div class="login">
+    <h1>Укажите ваши данные</h1>
+    <form id="form" method="post">
+        <label for="name">
+            <i class="fa fa-user"></i>
+        </label>
+        <input type="text" name="name" placeholder="Имя" id="name" required>
+        <label for="lname">
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" name="lname" placeholder="Фамилия" id="lname" required>
+        <label for="email">
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" name="email" placeholder="Эл. почта" id="email" required>
+        <label for="phone">
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" name="phone" placeholder="Номер телефона" id="phone" required>
+        <label for="number">Номер комнаты
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" id="number" name="saleNumber" placeholder="Год фильма" value='{{ number.saleNumber }}'>
+        <label for="checkIn">Дата проката
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="date" id="checkIn" name="checkIn">
+        <label for="checkOut">Дата возврата
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="date" id="checkOut" name="checkOut">
+        <div class="msg"><span style="color:red; font-size: 18px">{{ msg }}</span></div>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .login, .register {
+        width: 400px;
+        background-color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+    }
+
+    .login h1, .register h1 {
+        text-align: center;
+        color: dodgerblue;
+        font-size: 24px;
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid #dee0e4;
+    }
+
+    .login .links, .register .links {
+        display: flex;
+        padding: 0 15px;
+    }
+
+    .login .links a, .register .links a {
+        color: #adb2ba;
+        text-decoration: none;
+        display: inline-flex;
+        padding: 0 10px 10px 10px;
+        font-weight: bold;
+    }
+
+    .login .links a:hover, .register .links a:hover {
+        color: dodgerblue;
+    }
+
+    .login .links a.active, .register .links a.active {
+        border-bottom: 3px solid dodgerblue;
+        color: dodgerblue;
+    }
+
+    .login form, .register form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .login form label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login form input[type="date"], .login form input[type="text"], .login form input[type="email"] .login form input[type="phone"] {
+        width: 310px;
+        height: 50px;
+        border: 1px solid #dee0e4;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
+    .login form input[type="submit"], .register form input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        background-color: dodgerblue;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: #ffffff;
+        transition: background-color 0.2s;
+    }
+
+    .login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+        background-color: brown;
+        transition: background-color 0.2s;
+    }
+
+    body.loggedin {
+        background-color: #f3f4f7;
+    }
+</style>
+{% endblock %}

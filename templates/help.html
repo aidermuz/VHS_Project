@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block body %}
+<h1>Как связаться с нами</h1>
+<div class="container mt-5">
+    <h2>Позвоните нам</h2>
+    <div class="block-left">
+        <p>Есть вопросы? Мы поможем!
+        +7 (978) 938‑41-44 </p>
+    </div>
+    <div class="block-right">
+        <h2 style="text-align: right">Напишите нам</h2>
+        <p style="text-align: right">Идеи? Предложения?
+Мы открыты для любых вопросов!
+        Написать на 1muzafarov.a.20@gmail.com</p>
+    </div>
+</div>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .block-left {
+        width: 50%;
+        overflow: auto;
+        float: left;
+    }
+
+    .block-right {
+        width: 50%;
+        overflow: auto;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}

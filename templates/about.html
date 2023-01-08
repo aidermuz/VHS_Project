@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block body %}
+<h1>Немного о нас</h1>
+<div class="container mt-5">
+    <h2>Магазин VHS Кассет ProFilm</h2>
+    <div class="block-left">
+        <p>В нашем магазине по прокату видеокассет доступны самые новые и актуальные фильмы,
+            использование которых не входит ни в один из предусмотренных для абонирования пакетов
+            контента. Фильмы можно отдельно брать на прокат, платя указанную при каждом конкретном
+            фильме цену и используя фильм определенное время. </p>
+    </div>
+    <div class="block-right">
+        <h2 style="text-align: right">Все новинки</h2>
+        <p style="text-align: right">Эксклюзивный российский и зарубежный контент. Все ключевые кинопремьеры.</p>
+    </div>
+</div>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .block-left {
+        width: 50%;
+        overflow: auto;
+        float: left;
+    }
+
+    .block-right {
+        width: 50%;
+        overflow: auto;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock %}

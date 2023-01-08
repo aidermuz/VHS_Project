@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Админ меню
+{% endblock %}
+
+{% block body %}
+<div class="login mb-5">
+    <h1>Добавить новый фильм</h1>
+    <form id="form" method="post">
+        <label for="number">
+            <i class="fa fa-user"></i>
+        </label>
+        <input type="text" name="number" placeholder="Год фильма" id="number" required>
+        <label for="status"> Статус фильма
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" name="status" placeholder="free/busy" id="status" required>
+        <label for="Genre"> Жанр фильма
+            <i class="fa fa-lock"></i>
+        </label>
+        <input type="text" name="Genre" placeholder="1 - Horror, 2 - Comedy, 3 - Science" id="Genre" required>
+        <div class="msg"><span style="color:red; font-size: 18px">{{ msg }}</span></div>
+        <div class="msg"><span style="color:green; font-size: 18px">{{ msgr }}</span></div>
+        <input type="submit" value="Добавить">
+    </form>
+</div>
+
+<h1 style="text-align: center; margin-bottom: 25px">Все клиенты</h1>
+<table>
+    <tr style="margin-right: 10px">
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Почта</th>
+        <th>Номер телефона</th>
+        <th>Дата проката</th>
+        <th>Дата возврата</th>
+    </tr>
+    {%for guests in guest%}
+    <tr>
+        <td>{{ guests.idGuest }}</td>
+        <td>{{ guests.fname }}</td>
+        <td>{{ guests.lname }}</td>
+        <td>{{ guests.email }}</td>
+        <td>{{ guests.phone }}</td>
+        <td>{{ guests.checkIn }}</td>
+        <td>{{ guests.checkOut }}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    table {
+        display: flex;
+        justify-content: center;
+        border-collapse: separate;
+        border-spacing: 50px 3px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+</style>
+{% endblock %}

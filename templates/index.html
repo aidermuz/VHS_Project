@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+<main>
+    <section class="text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Прокат фильмов</h1>
+                <b style="text-align: center; font-size: 36px">"Pro Film"</b>
+                <p class="lead text-muted mt-3">Здесь вы сможете найти самый большой каталог фильмов, сериалов и анимации на видеокассетах.</p>
+                <p>
+                    <a class="btn btn-primary my-2" href="/rental">Взять в прокат фильм</a>
+                    <a class="btn btn-secondary my-2" href="/about">Узнать больше</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+<div class="row" style="margin-top:3%">
+    <div class="card" style='width: 25%'>
+        <img alt="Avatar"
+             src="https://pix10.agoda.net/hotelImages/161023/-1/88c7716d3339222aca1104f8314572af.jpg?ca=9&ce=1&s=1024x768"
+             style="margin-top:16px">
+        <div class="container">
+            <h4><b>Cериалы</b></h4>
+            <p>У нас все есть все любимые сериалы <b>90-х</b></p>
+            <div class="button">
+                <a class="btn btn-outline-primary me-2" href="/about">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style='width: 25%'>
+        <img alt="Avatar"
+             src="https://panoramadeluxe.com/img/otdyh-u-morya/bassein-4.jpg" style="margin-top:16px">
+        <div class="container">
+            <h4><b>Фильмы</b></h4>
+            <p>Всех возрастов и всех жанров </p>
+            <div class="button">
+                <a class="btn btn-outline-primary me-2" href="/about">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style='width: 25%'>
+        <img alt="Avatar"
+             src="https://img03.rl0.ru/afisha/o/s5.afisha.ru/mediastorage/d7/24/109c33d0a2ac49029c5cd1ed24d7.jpg"
+             style="margin-top:16px">
+        <div class="container">
+            <h4><b>Анимация</b></h4>
+            <p>Для самых юных</p>
+            <div class="button">
+                <a class="btn btn-outline-primary me-2" href="/about">Узнать больше</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .container {
+        margin: auto;
+    }
+
+    .button {
+        float: right;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        margin-top: 3%;
+        text-align: center;
+    }
+
+    img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    p {
+        text-align: center;
+    }
+
+</style>
+{% endblock %}

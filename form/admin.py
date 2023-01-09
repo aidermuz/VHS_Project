@@ -13,20 +13,29 @@ def admin():
     cursor = mysql.connection.cursor()
     msg = ''
     msgr = ''
-    if request.method == 'POST' and 'number' in request.form and 'status' in request.form and 'genre' in request.form:
-        num = request.form['number']
+    if request.method == 'POST' and 'movie' in request.form and 'status' in request.form and 'genre' in request.form \
+            and 'img' in request.form and 'description' in request.form and 'price' in request.form:
+        mov = request.form['movie']
         status = request.form['status']
         rtype = request.form['genre']
-        print(num, status, rtype)
+        image = request.form['img']
+        desc = request.form['description']
+        pr = request.form['price']
+        print(mov, status, rtype, image, desc, pr)
         try:
-            cursor.execute(f"SELECT * FROM Movies WHERE saleNumber={num}")
+            cursor.execute(f"SELECT * FROM movie WHERE nameMovie='{mov}' ")
             x = cursor.fetchone()
+            print(x)
             if x is None:
-                cursor.execute(f'''INSERT INTO `Movies` (`saleNumber`, `status`, `Genre_idGenre`) 
-                                VALUES ('{num}', '{status}', '{rtype}')''')
+                cursor.execute(f'''INSERT INTO `genre` (`description`, `price`, `img`, `genre`) 
+                                        VALUES ('{desc}', '{pr}', '{image}', '{rtype}')''')
+                cursor.execute(f'''SELECT idGenre FROM `genre` WHERE description = '{desc}' ''')
+                idg = cursor.fetchone()
+                cursor.execute(f'''INSERT INTO `movie` (`nameMovie`, `status`, `Genre_idGenre`) 
+                           VALUES ('{mov}', '{status}', '{idg['idGenre']}')''')
                 mysql.connection.commit()
                 msgr = 'Фильм успешно создан'
-            elif x['saleNumber'] == int(num):
+            elif x['nameMovie'] == mov:
                 msg = 'Такой Фильм уже существует'
         except(Exception,):
             msg = 'Данные неверны'

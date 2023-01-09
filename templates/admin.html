@@ -8,25 +8,37 @@
 <div class="login mb-5">
     <h1>Добавить новый фильм</h1>
     <form id="form" method="post">
-        <label for="number">
+        <label for="movie">
             <i class="fa fa-user"></i>
         </label>
-        <input type="text" name="number" placeholder="Год фильма" id="number" required>
+        <input type="text" name="movie" placeholder="Название фильма" id="movie" required>
         <label for="status"> Статус фильма
             <i class="fa fa-lock"></i>
         </label>
-        <input type="text" name="status" placeholder="free/busy" id="status" required>
-        <label for="Genre"> Жанр фильма
+        <input type="text" name="status" placeholder="Можно взять в прокат/В прокате" id="status" required>
+        <label for="genre"> Жанр фильма
             <i class="fa fa-lock"></i>
         </label>
-        <input type="text" name="Genre" placeholder="1 - Horror, 2 - Comedy, 3 - Science" id="Genre" required>
+        <input type="text" name="genre" placeholder="horror/comedy/drama" id="genre" required>
+        <label for="img">
+            <i class="fa fa-user"></i>
+        </label>
+        <input type="text" name="img" placeholder="Изображение" id="img" required>
+        <label for="description">
+            <i class="fa fa-user"></i>
+        </label>
+        <input type="text" name="description" placeholder="Описание" id="description" required>
+        <label for="price">
+            <i class="fa fa-user"></i>
+        </label>
+        <input type="text" name="price" placeholder="Цена" id="price" required>
         <div class="msg"><span style="color:red; font-size: 18px">{{ msg }}</span></div>
         <div class="msg"><span style="color:green; font-size: 18px">{{ msgr }}</span></div>
         <input type="submit" value="Добавить">
     </form>
 </div>
 
-<h1 style="text-align: center; margin-bottom: 25px">Все клиенты</h1>
+<h1 style="text-align: center; margin-bottom: 25px">Все пользователи</h1>
 <table>
     <tr style="margin-right: 10px">
         <th>ID</th>

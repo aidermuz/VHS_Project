@@ -28,7 +28,7 @@ def create_connection(host, user, password, db):
         print(f'MySQL server has gone away: {e}, trying to reconnect')
         raise e
 
-
+# connect_db = create_connection('Prizmax.mysql.pythonanywhere-services.com', 'Prizmax', 'bobrenock08', 'Prizmax$VHS_Project')
 connect_db = create_connection('localhost', 'root', 'bobrenock08', 'VHS_Project_db')
 
 app.add_url_rule('/', view_func=home.index)

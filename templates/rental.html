@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Прокат
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 style="text-align:center">Фильмы в прокате</h1>
+
+    <div class="row" style="margin-top:3%">
+        {%for movies in movie%}
+        <div class="card" style='width: 25%'>
+            <img src="{{ movies.img }}" alt="Avatar" style="margin-top:16px">
+            <div class="container">
+
+                <h4> </b> <span style="color: green">{{ movies.status }}</span>.
+                    Цена: <b>{{ movies.price }} руб.</b></h4>
+                <p>Название: <b>{{ movies.nameMovie }}</b></p>
+                <p>Жанр фильма: <b>{{ movies.genre }}</b></p>
+                <p>Описание: <b>{{ movies.description }}</b></p>
+                {%if session['username'] != 'admin'%}
+                <div class="button">
+                    <a href="/payment/{{movies.idMovie}}" class="btn btn-outline-primary me-2">Взять в прокат</a>
+                    </form>
+                </div>
+                {%endif%}
+
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+<style>
+    .container {
+        margin: auto;
+    }
+
+    .button {
+        float: right;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        margin-top: 3%;
+    }
+
+</style>
+
+{% endblock %}
